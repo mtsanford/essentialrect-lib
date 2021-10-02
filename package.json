@@ -3,7 +3,8 @@
   "version": "1.0.3",
   "description": "javascript libraries for implementing essentialRect image display",
   "homepage": "https://github.com/mtsanford/essentialrect-lib",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
