@@ -1,6 +1,6 @@
 {
   "name": "essentialrect-lib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "javascript libraries for implementing essentialRect image display",
   "homepage": "https://github.com/mtsanford/essentialrect-lib",
   "main": "lib/index.js",
@@ -11,8 +11,8 @@
     "lint": "eslint . --ext .ts,.js,.jsx,.tsx",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
-    "postversion" : "git push && git push --tags",
-    "version" : "git add -A src"
+    "postversion": "git push && git push --tags",
+    "version": "git add -A src"
   },
   "keywords": [
     "essentialrect",
