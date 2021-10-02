@@ -7,8 +7,11 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
+    "lint": "eslint . --ext .ts,.js,.jsx,.tsx",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test && npm run lint",
+    "postversion" : "git push && git push --tags",
+    "version" : "git add -A src"
   },
   "keywords": [
     "essentialrect",
