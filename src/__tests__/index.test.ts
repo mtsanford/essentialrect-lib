@@ -1,4 +1,10 @@
-import { printMsg } from '../index';
-test('printMsg', () => {
-  expect(printMsg()).toBe('This is a message from the demo package');
+import { Rect } from '../index';
+test('use a Rect', () => {
+  const r1: Rect = {
+    left: 0,
+    top: 0,
+    width: 10,
+    height: 10,
+  };
+  expect(r1.width).toBe(10);
 });
