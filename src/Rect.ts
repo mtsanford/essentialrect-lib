@@ -47,7 +47,7 @@ export function rectNormalize(sourceRect: Rect): Rect {
   };
 }
 
-export function rectFromPoints(point1: Point, point2: Point) {
+export function rectFromPoints(point1: Point, point2: Point): Rect {
   return {
     left: Math.min(point1.x, point2.x),
     top: Math.min(point1.y, point2.y),
