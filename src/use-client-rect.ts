@@ -11,7 +11,7 @@
 import { useCallback, useRef, useState } from "react";
 import { Rect, emptyRect } from "./Rect";
 
-const useClientRect = (): [(domElement: HTMLDivElement) => void, Rect] => {
+export const useClientRect = (): [(domElement: HTMLDivElement) => void, Rect] => {
   const [clientRect, setClientRect] = useState<Rect>(emptyRect);
   const resizeObserver = useRef<ResizeObserver>(
     new ResizeObserver((entries: ResizeObserverEntry[]) => {
@@ -39,4 +39,3 @@ const useClientRect = (): [(domElement: HTMLDivElement) => void, Rect] => {
   return [setRef, clientRect];
 };
 
-export default useClientRect;

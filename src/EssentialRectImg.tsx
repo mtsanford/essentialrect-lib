@@ -1,11 +1,9 @@
 import React, { CSSProperties } from "react";
 
 import { fitRect } from "./fit-essential-rect";
-import useClientRect from "./use-client-rect";
+import { useClientRect } from "./use-client-rect";
 import { Rect, rectEmpty } from "./Rect";
-import useImageRect from "./use-image-rect";
-
-import './essential-rect-img.css';
+import { useImageRect } from "./use-image-rect";
 
 const erIconDefaultStyles: CSSProperties = {
   backgroundColor: "red",
@@ -13,7 +11,7 @@ const erIconDefaultStyles: CSSProperties = {
   position: "absolute",
 };
 
-const EssentialRectImg: React.FC<{
+export const EssentialRectImg: React.FC<{
   src: string;
   essentialRect?: Rect;
   showIcon?: boolean;
@@ -68,5 +66,3 @@ const EssentialRectImg: React.FC<{
     </div>
   );
 };
-
-export default EssentialRectImg;

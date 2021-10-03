@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 
 import { Rect } from "./Rect";
 
-const useImageRect = (): [React.RefObject<HTMLImageElement>, Rect | undefined, () => void] => {
+export const useImageRect = (): [React.RefObject<HTMLImageElement>, Rect | undefined, () => void] => {
   const [imageRect, setImageRect] = useState<Rect | undefined>();
   const ref = useRef<HTMLImageElement>(null);
 
@@ -23,5 +23,3 @@ const useImageRect = (): [React.RefObject<HTMLImageElement>, Rect | undefined, (
 
   return [ref, imageRect, onLoad];
 };
-
-export default useImageRect;

@@ -1,4 +1,4 @@
-import Rect from './Rect';
+import { Rect } from './Rect';
 
 // image = | a |  e  |          b          |
 // view  = |   v    |
@@ -124,6 +124,3 @@ export const fitRect = (
   return adjustedFittedRect;
 }
 
-const exportFuncs = { fitLine, fitRect, clientToImageRect, imageToClientRect };
-
-export default exportFuncs;

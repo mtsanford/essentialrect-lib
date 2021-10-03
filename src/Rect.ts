@@ -68,4 +68,3 @@ export const emptyRect: Rect = {
   height: 0,
 };
 
-export default Rect;
