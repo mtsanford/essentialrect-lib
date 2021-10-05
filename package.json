@@ -3,17 +3,17 @@
   "version": "1.0.6",
   "description": "javascript libraries for implementing essentialRect image display",
   "homepage": "https://github.com/mtsanford/essentialrect-lib",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc && npm run copy",
+    "build": "webpack && npm run copy",
     "lint": "eslint . --ext .ts,.js,.jsx,.tsx",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "postversion": "git push && git push --tags",
     "version": "git add -A src",
-    "copy": "copyfiles --flat ./src/*.css ./lib"
+    "copy": "copyfiles --flat ./src/*.css ./dist"
   },
   "keywords": [
     "essentialrect",
@@ -33,13 +33,16 @@
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3"
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.8.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"
   },
   "files": [
-    "lib/**/*",
+    "dist/**/*",
     "src"
   ],
   "repository": {
