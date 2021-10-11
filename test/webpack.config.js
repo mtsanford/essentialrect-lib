@@ -1,9 +1,9 @@
 /* eslint-env node */
-//const path = require('path');
+const path = require('path');
 
 module.exports = {
-  mode: 'production',
-  entry: './test.jsx',
+  mode: 'development',
+  entry: path.resolve(__dirname, 'test.tsx'),
   output: {
     path: __dirname,
     filename: 'bundle.js',
@@ -16,27 +16,12 @@ module.exports = {
         use: 'ts-loader',
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/env',
-                '@babel/react'
-              ]
-            }
-          }
-        ]
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.jsx', '.ts', '.tsx', '.js'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
 };
