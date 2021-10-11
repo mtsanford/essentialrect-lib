@@ -29,6 +29,5 @@ test('fit a Rect', () => {
     height: 100,
   };
   const displayRect = fitRect(imageRect, essentialRect, clientRect);
-  console.log(displayRect);
   expect(imageRect.width).toBe(100);
 });

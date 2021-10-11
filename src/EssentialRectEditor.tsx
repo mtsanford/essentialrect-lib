@@ -44,8 +44,6 @@ export const EssentialRectEditor: React.FC<EssentialRectEditorProps> = ({
   const [imageRect, setImageRect] = useState<Rect | undefined>();
   const [imageViewerRef, clientRect] = useClientRect();
 
-  console.log('EssentialRectEditor', imageRect, clientRect)
-
   let crop: Partial<Crop> = {};
   let cropWrapperStyles: CSSProperties = {};
   let essentialRectClient: Rect;
