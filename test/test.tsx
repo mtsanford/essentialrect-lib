@@ -1,10 +1,13 @@
 import React, { useCallback, useState, CSSProperties } from 'react';
 import ReactDOM from 'react-dom'; // eslint-disable-line
 import { EssentialRectImg } from '../src/index';
+import { EssentialRectEditor, Rect } from '../src/index';
+
 import '../src/essential-rect-img.css';
+import 'react-image-crop/dist/ReactCrop.css';
 
 // total width + height
-const T = 200 * 200;
+const T = 160 * 160;
 
 const aspectRatios: number[] = [ 1/3, 1/2, 1/1.5, 1, 1.5, 2, 3];
 
@@ -18,14 +21,32 @@ const viewStyles: CSSProperties[] = aspectRatios.map( (A: number) => {
 });
 
 function App() {
+  const [essentialRect, setEssentialRect] = useState<Rect>({left:858, top:0, width:649, height:942});
+
+  const onImageLoaded = (): void => {
+    console.log('onImageLoaded');
+  }
+
+  const onEssentialRectChange = (r: Rect): void => {
+    setEssentialRect(r);
+    console.log('onEssentialRectChange');
+  }
 
   return (
-    <div>
-      { viewStyles.map((s: CSSProperties) => (
-        <div className="imageWrapper" style={s}>
+    <div className="App">
+      <div className='editorWrapper'>
+        <EssentialRectEditor
+          imageUrl='./sax.jpg'
+          essentialRect={essentialRect}
+          onEssentialRectChange={onEssentialRectChange}
+          onImageLoaded={onImageLoaded}
+        />
+      </div>
+      { viewStyles.map((s: CSSProperties, i:number) => (
+        <div className="imageWrapper" style={s} key={aspectRatios[i]}>
           <EssentialRectImg
             src="./sax.jpg"
-            essentialRect={{left:858, top:0, width:649, height:942}}
+            essentialRect={essentialRect}
           />
         </div>
       ))}

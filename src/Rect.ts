@@ -56,6 +56,15 @@ export function rectFromPoints(point1: Point, point2: Point): Rect {
   };
 }
 
+export function rectScale(rect: Rect, scale: number): Rect {
+  return {
+    left: rect.left * scale,
+    top: rect.top * scale,
+    width: rect.width * scale,
+    height: rect.height * scale,
+  };
+}
+
 export const emptyPoint: Point = {
   x: 0,
   y: 0,
