@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "javascript libraries for implementing essentialRect image display",
   "homepage": "https://github.com/mtsanford/essentialrect-lib",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/EssentialRectLib.js",
+  "types": "dist/EssentialRectLib.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jest.config.json",
     "build": "webpack && npm run copy",
     "lint": "eslint . --ext .ts,.js,.jsx,.tsx",
     "prepare": "npm run build",
@@ -39,6 +39,7 @@
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-image-crop": "^9.0.4",
     "style-loader": "^3.3.0",
     "ts-jest": "^27.0.5",
     "ts-loader": "^9.2.6",
@@ -47,7 +48,8 @@
     "webpack-cli": "^4.8.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-image-crop": "^9.0.4"
   },
   "files": [
     "dist/**/*",
@@ -56,14 +58,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mtsanford/essentialrect-lib.git"
-  },
-  "dependencies": {
-    "react-image-crop": "^9.0.4"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [ "<rootDir>/test/*" ],
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
-    }
   }
 }
