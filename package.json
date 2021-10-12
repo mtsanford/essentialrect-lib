@@ -1,6 +1,6 @@
 {
   "name": "essentialrect-lib",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "javascript libraries for implementing essentialRect image display",
   "homepage": "https://github.com/mtsanford/essentialrect-lib",
   "main": "dist/EssentialRectLib.js",
