@@ -59,5 +59,11 @@
   },
   "dependencies": {
     "react-image-crop": "^9.0.4"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [ "<rootDir>/test/*" ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   }
 }
