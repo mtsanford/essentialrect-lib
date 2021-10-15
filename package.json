@@ -49,6 +49,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
+  },
+  "optionalDependencies": {
     "react-image-crop": "^9.0.4"
   },
   "files": [
