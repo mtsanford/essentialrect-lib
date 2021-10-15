@@ -6,21 +6,22 @@ An React implementation of the essentialRect responsive display standard. Essent
 
 [![EssentialRect Library on NPM](https://img.shields.io/npm/v/essentialrect-lib.svg)](https://www.npmjs.com/package/essentialrect-lib)
 
-[Quick demo for mobile](https://www.essentialrect.com) |
-[EssentalRect Editor demo](https://tool.essentialrect.com)
+[Quick demo](https://www.essentialrect.com) |
+[Editor demo](https://tool.essentialrect.com)
+[Code Sandbox](https://codesandbox.io/s/sharp-forest-lm1h2)
 
 ## Table of Contents
 
-1. [What is essentiaRect](#about)
+1. [What is essentiaRect?](#about)
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Example](#example)
 6. [Props](#props)
 
-## What is essentialRect
+## What is essentialRect?
 
-EssentialRect is a standard for responsive image display. Rather than cropping an image to a rectangle of a certain aspect ratio, a rectangle is defined for an image as "essential", it's essentialRect. This allows the image to be shown in a wide range of aspect ratios without cropping or leterboxing. The essentialRect will be guaranteed to be displayed, while the rest of the image will be considered "nice to have", and will be used to fill the remaining client area. The essentialRect will be as centered as possible while still avoiding letterboxing.
+EssentialRect is a standard for responsive image display. Rather than cropping an image to a rectangle of a certain aspect ratio, a rectangle (its essentialRect) is defined for an image as "essential". This allows the image to be shown in a wide range of aspect ratios without cropping or leterboxing. The essentialRect will be guaranteed to be displayed, while the rest of the image will be considered "nice to have", and will be used to fill the remaining client area. The essentialRect will be as centered as possible while still avoiding letterboxing.
 
 ## Features
 
@@ -35,7 +36,7 @@ npm i essential-rect --save
 
 ## Usage
 
-There is no default import.  For image diplay:
+There is no default export.  For image diplay:
 
 ```js
 import { EssentialRectImg } from "essentialrect-lib";
@@ -49,6 +50,11 @@ import { EssentialRectEditor } from "essentialrect-lib";
 
 Always include `dist/essential-rect-img.css` for styles.
 
+```js
+import "react-image-crop/dist/essential-rect-img.css";
+```
+
+
 All rectangles use a Rect interface, so it may be useful to import it.
 
 ```js
@@ -56,6 +62,32 @@ import { Rect } from "essentialrect-lib";
 ```
 
 ## Example
+
+### Image display
+
+```js
+import { EssentialRectImg } from "../src/index";
+import "react-image-crop/dist/ReactCrop.css";
+
+const imageHeight = 300;
+const aspectRatio = 1.91;
+
+function App(imageUrl) {
+  const imageStyles = {
+    width: `${imageHeight * aspectRatio}px`,
+    height: `${imageHeight}px`,
+  };
+
+  return (
+    <div className="App">
+      <div className="imageWrapper" style={editorStyles}>
+        <EssentialRectImg src={imageUrl} essentialRect={essentialRect} />
+      </div>
+    </div>
+  );
+}
+```
+
 
 ```js
 import { EssentialRectImg } from "../src/index";
@@ -129,11 +161,11 @@ The parent component should maintain the update of the essentialRect in this cal
 
 #### minAspectRatio (optional)
 
-Specify that if the aspect ratio the image is displayed in is above minAspectRatio, it should not be letterboxed.  The contrains the width of the essentialRect.
+Specify that if the aspect ratio of the box the image is displayed in is above minAspectRatio, it should not be letterboxed.  This contrains the width of the essentialRect.
 
 #### maxAspectRatio (optional)
 
-Specify that if the aspect ratio the image is displayed in is below maxAspectRatio, it should not be letterboxed.  The contrains the height of the essentialRect.
+Specify that if the aspect ratio pf the box the image is displayed in is below maxAspectRatio, it should not be letterboxed.  This contrains the height of the essentialRect.
 
 #### onImageError (optional)
 
