@@ -1,7 +1,7 @@
-import React, { useCallback, useState, CSSProperties } from 'react';
-import ReactDOM from 'react-dom'; // eslint-disable-line
+import { useState, CSSProperties } from 'react';
+import ReactDOM from 'react-dom'; 
 import { EssentialRectImg } from '../src/index';
-import { EssentialRectEditor, Rect } from '../src/index';
+import { EssentialRectEditor, Rect } from '../src/editor';
 
 import '../src/essential-rect-img.css';
 import 'react-image-crop/dist/ReactCrop.css';
