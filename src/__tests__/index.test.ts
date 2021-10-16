@@ -1,4 +1,4 @@
-import { Rect, fitRect } from '../index';
+import { Rect } from '../index';
 test('use a Rect', () => {
   const r1: Rect = {
     left: 0,
@@ -16,18 +16,5 @@ test('fit a Rect', () => {
     width: 100,
     height: 100,
   };
-  const essentialRect: Rect = {
-    left: 20,
-    top: 20,
-    width: 60,
-    height: 20,
-  };
-  const clientRect: Rect = {
-    left: 0,
-    top: 0,
-    width: 100,
-    height: 100,
-  };
-  const displayRect = fitRect(imageRect, essentialRect, clientRect);
   expect(imageRect.width).toBe(100);
 });
