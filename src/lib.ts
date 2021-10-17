@@ -1,3 +1,4 @@
+// Include all the modules EXCEPT EssentialRectEditor, which has the react-image-crop dependency
 export * from "./EssentialRectImg";
 export * from "./fit-essential-rect";
 export * from "./Rect";

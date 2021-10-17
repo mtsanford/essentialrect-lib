@@ -8,7 +8,7 @@
     ".": "./dist/EssentialRectLib.js",
     "./editor": "./dist/EssentialRectEditor.js"
   },
-  "types": "dist/editor.d.ts",
+  "types": "dist/types/editor.d.ts",
   "scripts": {
     "test": "jest --config jest.config.json",
     "build": "webpack && npm run copy",

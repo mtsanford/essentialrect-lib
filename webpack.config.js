@@ -46,7 +46,7 @@ module.exports = [
   {
     mode: "production",
     name: "EssentialRectLib",
-    entry: path.resolve(__dirname, './src/index.ts'),
+    entry: path.resolve(__dirname, './src/lib.ts'),
     module: {
       rules: [
         {
@@ -64,7 +64,7 @@ module.exports = [
       libraryTarget: 'umd',
       filename: 'EssentialRectLib.js',
       globalObject: 'this',
-      clean: false, // don't delete EssentialRectEditor!
+      clean: false,
       path: path.resolve(__dirname, 'dist'),
     },
     externals: {
@@ -78,3 +78,6 @@ module.exports = [
     target: 'web',
   },
 ];
+
+// clean can clobber one config
+module.exports.parallelism = 1;

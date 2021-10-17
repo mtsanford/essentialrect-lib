@@ -30,35 +30,32 @@ EssentialRect is a standard for responsive image display. Rather than cropping a
 
 ## Installation
 
+For image diplay only (no editing):
+
 ```
 npm i essential-rect --save
 ```
 
-## Usage
-
-There is no default export.  For image diplay:
-
-```js
-import { EssentialRectImg } from "essentialrect-lib";
-```
-
 For essentialRect editing of an image:
 
-```js
-import { EssentialRectEditor } from "essentialrect-lib";
+```
+npm i essential-rect react-image-crop --save
 ```
 
-Always include `dist/essential-rect-img.css` for styles.
+## Usage
+
+For image diplay only (no editing):
 
 ```js
-import "react-image-crop/dist/essential-rect-img.css";
+import EssentialRectImg from "essentialrect-lib";
+import "react-image-crop/dist/essentialrect-lib.css";
 ```
 
-
-All rectangles use a Rect interface, so it may be useful to import it.
+For essentialRect display and editing of an image:
 
 ```js
-import { Rect } from "essentialrect-lib";
+import { EssentialRectEditor, EssentialRectImg } from "essentialrect-lib/editor";
+import "react-image-crop/dist/essentialrect-editor.css";
 ```
 
 ## Example
@@ -66,7 +63,7 @@ import { Rect } from "essentialrect-lib";
 ### Image display
 
 ```js
-import { EssentialRectImg } from "../src/index";
+import { EssentialRectImg } from "essentialrect-lib";
 import "react-image-crop/dist/ReactCrop.css";
 
 const imageHeight = 300;
@@ -90,8 +87,7 @@ function App(imageUrl) {
 
 
 ```js
-import { EssentialRectImg } from "../src/index";
-import { EssentialRectEditor, Rect } from "../src/index";
+import { EssentialRectImg, EssentialRectEditor, Rect } from "essentialrect-lib";
 
 import "react-image-crop/dist/ReactCrop.css";
 
