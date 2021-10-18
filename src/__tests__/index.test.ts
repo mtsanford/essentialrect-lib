@@ -1,4 +1,4 @@
-import { Rect } from '../lib';
+import { Rect } from '../index';
 test('use a Rect', () => {
   const r1: Rect = {
     left: 0,
