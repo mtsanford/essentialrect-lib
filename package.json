@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "React components for implementing essentialRect image display and editing",
   "homepage": "https://github.com/mtsanford/react-essentialrec",
-  "main": "dist/EssentialRectLib.js",
+  "main": "dist/js/EssentialRectLib.js",
   "exports": {
     ".": "./dist/js/EssentialRectLib.js",
     "./editor": "./dist/js/EssentialRectEditor.js"
