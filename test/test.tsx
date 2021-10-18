@@ -1,9 +1,8 @@
 import { useState, CSSProperties } from 'react';
 import ReactDOM from 'react-dom'; 
-import { EssentialRectEditor, EssentialRectImg, Rect } from '../src/editor';
+import { EssentialRectImg, Rect } from '../src/index';
 
 import '../src/essentialrect-img.css';
-import '../src/essentialrect-editor.css';
 import 'react-image-crop/dist/ReactCrop.css';
 
 // total width + height
@@ -34,14 +33,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className='editorWrapper'>
-        <EssentialRectEditor
-          imageUrl='./sax.jpg'
-          essentialRect={essentialRect}
-          onEssentialRectChange={onEssentialRectChange}
-          onImageLoaded={onImageLoaded}
-        />
-      </div>
       { viewStyles.map((s: CSSProperties, i:number) => (
         <div className="imageWrapper" style={s} key={aspectRatios[i]}>
           <EssentialRectImg
