@@ -26,7 +26,7 @@ module.exports = [
       filename: 'EssentialRectEditor.js',
       globalObject: 'this',
       clean: true,
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/js'),
     },
     externals: {
       react: {
@@ -65,7 +65,7 @@ module.exports = [
       filename: 'EssentialRectLib.js',
       globalObject: 'this',
       clean: false,
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/js'),
     },
     externals: {
       react: {

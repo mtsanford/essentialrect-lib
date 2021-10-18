@@ -1,14 +1,15 @@
-# EssentialRect Library
+# React EssentialRect
 
-An React implementation of the essentialRect responsive display standard. EssentialRectImg acts like a '<img/>' element, using images essential rectangle to reponsiviely display the image within the client area. EssentialRectEditor is a React component that allows selection of an essential rectangle, optionally contraining to allow letterbox-free display within a range of aspect ratios. EssentialRectEditor uses the react-image-crop module as a dependency.
+A React implementation of the essentialRect responsive display standard. EssentialRectImg is a React component that acts like an '<img/>' element, using image's essential rectangle to reponsiviely display the image within the client area. EssentialRectEditor is a React component that allows selection of an essential rectangle, optionally contraining to require letterbox-free display within a range of aspect ratios. EssentialRectEditor uses the react-image-crop module as a dependency.
 
-[Learn more about react-image-crop here](https://github.com/DominicTobias/react-image-crop)
-
-[![EssentialRect Library on NPM](https://img.shields.io/npm/v/essentialrect-lib.svg)](https://www.npmjs.com/package/essentialrect-lib)
+[![EssentialRect Library on NPM](https://img.shields.io/npm/v/react-essentialrect.svg)](https://www.npmjs.com/package/react-essentialrect)
 
 [Quick demo](https://www.essentialrect.com) |
 [Editor demo](https://tool.essentialrect.com)
 [Code Sandbox](https://codesandbox.io/s/sharp-forest-lm1h2)
+
+[Learn more about react-image-crop here](https://github.com/DominicTobias/react-image-crop)
+
 
 ## Table of Contents
 
@@ -33,29 +34,29 @@ EssentialRect is a standard for responsive image display. Rather than cropping a
 For image diplay only (no editing):
 
 ```
-npm i essential-rect --save
+npm i react-essentialrect --save
 ```
 
 For essentialRect editing of an image:
 
 ```
-npm i essential-rect react-image-crop --save
+npm i react-essentialrect react-image-crop --save
 ```
 
 ## Usage
 
-For image diplay only (no editing):
+There is no default export.  For image diplay only (no editing):
 
 ```js
-import EssentialRectImg from "essentialrect-lib";
-import "react-image-crop/dist/essentialrect-lib.css";
+import EssentialRectImg from "react-essentialrect";
+import "react-essentialrect/dist/css/essentialrect-img.css";
 ```
 
 For essentialRect display and editing of an image:
 
 ```js
-import { EssentialRectEditor, EssentialRectImg } from "essentialrect-lib/editor";
-import "react-image-crop/dist/essentialrect-editor.css";
+import { EssentialRectEditor, EssentialRectImg } from "react-essentialrect/editor";
+import "react-essentialrect/dist/css/essentialrect-editor.css";
 ```
 
 ## Example
@@ -63,8 +64,8 @@ import "react-image-crop/dist/essentialrect-editor.css";
 ### Image display
 
 ```js
-import { EssentialRectImg } from "essentialrect-lib";
-import "react-image-crop/dist/ReactCrop.css";
+import { EssentialRectImg } from "react-essentialrect";
+import "react-essentialrect/dist/css/essentialrect-img.css";
 
 const imageHeight = 300;
 const aspectRatio = 1.91;
@@ -77,7 +78,7 @@ function App(imageUrl) {
 
   return (
     <div className="App">
-      <div className="imageWrapper" style={editorStyles}>
+      <div className="imageWrapper" style={imageStyles}>
         <EssentialRectImg src={imageUrl} essentialRect={essentialRect} />
       </div>
     </div>
@@ -87,9 +88,10 @@ function App(imageUrl) {
 
 
 ```js
-import { EssentialRectImg, EssentialRectEditor, Rect } from "essentialrect-lib";
-
+import { EssentialRectImg, EssentialRectEditor } from "react-essentialrect/editor";
 import "react-image-crop/dist/ReactCrop.css";
+import "react-essentialrect/dist/css/essentialrect-img.css";
+import "react-essentialrect/dist/css/essentialrect-editor.css";
 
 const imageHeight = 300;
 const aspectRatio = 1.91;
@@ -149,7 +151,7 @@ The url for the image.  Can be any url that `<img>` accepts.
 
 #### essentialRect (optional)
 
-A Rect object that defines the essential rectangle for the image.  If not provided, it will be set to the the rectangle of the entire image, or a centered rectangle that is contrained by minAspectRatio and/or maxAspectRatio.
+A Rect object that defines the essential rectangle for the image.  If not provided, it will be set to the rectangle of the entire image, or a centered rectangle that is contrained by minAspectRatio and/or maxAspectRatio.
 
 #### onEssentialRectChange (optional)
 

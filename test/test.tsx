@@ -1,9 +1,9 @@
 import { useState, CSSProperties } from 'react';
 import ReactDOM from 'react-dom'; 
-import { EssentialRectImg } from '../src/index';
-import { EssentialRectEditor, Rect } from '../src/editor';
+import { EssentialRectEditor, EssentialRectImg, Rect } from '../src/editor';
 
-import '../src/essential-rect-img.css';
+import '../src/essentialrect-img.css';
+import '../src/essentialrect-editor.css';
 import 'react-image-crop/dist/ReactCrop.css';
 
 // total width + height

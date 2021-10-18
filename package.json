@@ -1,12 +1,12 @@
 {
-  "name": "essentialrect-lib",
-  "version": "1.1.6",
-  "description": "javascript libraries for implementing essentialRect image display",
-  "homepage": "https://github.com/mtsanford/essentialrect-lib",
+  "name": "react-essentialrect",
+  "version": "1.0.0",
+  "description": "React components for implementing essentialRect image display and editing",
+  "homepage": "https://github.com/mtsanford/react-essentialrec",
   "main": "dist/EssentialRectLib.js",
   "exports": {
-    ".": "./dist/EssentialRectLib.js",
-    "./editor": "./dist/EssentialRectEditor.js"
+    ".": "./dist/js/EssentialRectLib.js",
+    "./editor": "./dist/js/EssentialRectEditor.js"
   },
   "types": "dist/types/editor.d.ts",
   "scripts": {
@@ -17,12 +17,12 @@
     "prepublishOnly": "npm test && npm run lint",
     "postversion": "git push && git push --tags",
     "version": "git add -A src",
-    "copy": "copyfiles --flat ./src/*.css ./dist"
+    "copy": "copyfiles --flat ./src/*.css ./dist/css"
   },
   "keywords": [
     "essentialrect",
     "image",
-    "javascript"
+    "react"
   ],
   "author": "Mark Sanford",
   "license": "MIT",
@@ -63,6 +63,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mtsanford/essentialrect-lib.git"
+    "url": "https://github.com/mtsanford/react-essentialrec.git"
   }
 }
