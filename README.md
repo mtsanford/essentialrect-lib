@@ -7,9 +7,6 @@ A React implementation of the essentialRect responsive display standard. Essenti
 [Quick demo](https://www.essentialrect.com) |
 [Code Sandbox](https://codesandbox.io/s/sharp-forest-lm1h2)
 
-![essentialrect example](https://github.com/mtsanford/react-essentialrect/blob/main/essentialrect-example.jpg?raw=true)
-*an image with its essential rect, rendered into two aspect ratios*
-
 ## Table of Contents
 
 1. [What is essentiaRect?](#about)
@@ -21,6 +18,9 @@ A React implementation of the essentialRect responsive display standard. Essenti
 ## What is essentialRect?
 
 EssentialRect is a standard for responsive image display. Rather than cropping an image to a rectangle of a certain aspect ratio, a rectangle (its essentialRect) is defined for an image as "essential". This allows the image to be shown in a wide range of aspect ratios without cropping or leterboxing. The essentialRect will be guaranteed to be displayed, while the rest of the image will be considered "nice to have", and will be used to fill the remaining client area. The essentialRect will be as centered as possible while still avoiding letterboxing.
+
+![essentialrect example](https://github.com/mtsanford/react-essentialrect/blob/main/essentialrect-example.jpg?raw=true)
+*An image with an essential rect, rendered into two aspect ratios. Photo by [Rodnae Productions @ Pexel](https://www.pexels.com/@rodnae-prod)*
 
 ## Installation
 
