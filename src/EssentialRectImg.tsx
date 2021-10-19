@@ -14,8 +14,12 @@ const erIconDefaultStyles: CSSProperties = {
 export const EssentialRectImg: React.FC<{
   src: string;
   essentialRect?: Rect;
+  className?: string;
+  style?: CSSProperties;
+  imageStyle?: CSSProperties;
+  alt?: string;
   showIcon?: boolean;
-}> = ({ src, essentialRect, showIcon }) => {
+}> = ({ src, essentialRect, className, style, imageStyle, alt, showIcon }) => {
   let icon;
   let imageStyles: CSSProperties = { display: "none" };
   const [imageRef, imageRect, onImageLoad] = useImageRect();
@@ -47,18 +51,22 @@ export const EssentialRectImg: React.FC<{
       top: `${renderedImageRect.top}px`,
       width: `${renderedImageRect.width}px`,
       height: `${renderedImageRect.height}px`,
+      ...imageStyle,
     };
   }
 
+  const classes = `EssentialRectImg ${className}`;
+
   return (
     <div
-      className="EssentialRectImg"
+      className={classes}
+      style={style}
       ref={containerRef}
     >
       {icon}
       <img
         src={src}
-        alt=""
+        alt={alt || ""}
         style={imageStyles}
         ref={imageRef}
         onLoad={onImageLoad}
