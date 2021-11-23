@@ -39,6 +39,24 @@ function App() {
           showIcon={true}
         />
       ))}
+
+      <div className="grid">
+        <div>
+          <EssentialRectImg src="./sax.jpg" essentialRect={essentialRect} />
+        </div>
+        <div>
+          <EssentialRectImg src="./sax.jpg" essentialRect={essentialRect} />
+        </div>
+      </div>
+
+      <div className="grid2">
+        <div>
+          <EssentialRectImg src="./sax.jpg" essentialRect={essentialRect} />
+        </div>
+        <div>
+          <EssentialRectImg src="./sax.jpg" essentialRect={essentialRect} />
+        </div>
+      </div>
     </div>
   );
 }

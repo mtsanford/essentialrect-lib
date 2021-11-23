@@ -18,3 +18,26 @@ div {
   background-color: red;
 }
 
+/**********************/
+
+.grid {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid > div {
+  width: 50%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.grid2 {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid2 > div {
+  width: 50%;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+}
