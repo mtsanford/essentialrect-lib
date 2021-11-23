@@ -5,7 +5,12 @@
   overflow: hidden;
 }
 
-.EssentialRectImg img {
+.EssentialRectImg > div {
   position: absolute;
-  display: block;
+}
+
+
+.EssentialRectImg img {
+  width: 100%;
+  height: auto;
 }

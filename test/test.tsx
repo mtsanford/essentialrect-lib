@@ -36,6 +36,7 @@ function App() {
           essentialRect={essentialRect}
           style={s}
           key={aspectRatios[i]}
+          showIcon={true}
         />
       ))}
     </div>

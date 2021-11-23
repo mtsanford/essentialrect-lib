@@ -21,7 +21,7 @@ export const EssentialRectImg: React.FC<{
   showIcon?: boolean;
 }> = ({ src, essentialRect, className, style, imageStyle, alt, showIcon }) => {
   let icon;
-  let imageStyles: CSSProperties = { display: "none" };
+  let wrapperStyles: CSSProperties = { display: "none" };
   const [imageRef, imageRect, onImageLoad] = useImageRect();
   const [containerRef, containerRect] = useClientRect();
 
@@ -36,8 +36,8 @@ export const EssentialRectImg: React.FC<{
       width: `${iconSize}px`,
       height: `${iconSize * 0.4}px`,
       border: `solid black ${iconSize * 0.08}px`,
-    }
-    icon =  <div style={erIconStyles} />
+    };
+    icon = <div style={erIconStyles} />;
   }
 
   if (imageRect && !rectEmpty(containerRect)) {
@@ -46,31 +46,28 @@ export const EssentialRectImg: React.FC<{
     }
     const renderedImageRect = fitRect(imageRect, essentialRect, containerRect);
 
-    imageStyles = {
+    wrapperStyles = {
       left: `${renderedImageRect.left}px`,
       top: `${renderedImageRect.top}px`,
       width: `${renderedImageRect.width}px`,
       height: `${renderedImageRect.height}px`,
-      ...imageStyle,
     };
   }
 
   const classes = `EssentialRectImg ${className}`;
 
   return (
-    <div
-      className={classes}
-      style={style}
-      ref={containerRef}
-    >
+    <div className={classes} style={style} ref={containerRef}>
       {icon}
-      <img
-        src={src}
-        alt={alt || ""}
-        style={imageStyles}
-        ref={imageRef}
-        onLoad={onImageLoad}
-      />
+      <div style={wrapperStyles}>
+        <img
+          src={src}
+          style={imageStyle}
+          alt={alt || ""}
+          ref={imageRef}
+          onLoad={onImageLoad}
+        />
+      </div>
     </div>
   );
 };
